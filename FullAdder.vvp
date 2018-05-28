@@ -1,0 +1,178 @@
+#! /usr/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_0xd81570 .scope module, "testbench" "testbench" 2 23;
+ .timescale 0 0;
+v0xdb1020_0 .var "a", 3 0;
+v0xdb10a0_0 .var "b", 3 0;
+v0xdb1120_0 .net "cOut", 0 0, L_0xdb38a0; 1 drivers
+v0xdb11f0_0 .var "i", 3 0;
+v0xdb1270_0 .var "j", 3 0;
+RS_0x7fcce753a9a8 .resolv tri, L_0xdb1fe0, L_0xdb2b60, L_0xdb3770, L_0xdb4230;
+v0xdb12f0_0 .net8 "s", 3 0, RS_0x7fcce753a9a8; 4 drivers
+S_0xd81320 .scope module, "myFullAdder" "Adder" 2 29, 2 1, S_0xd81570;
+ .timescale 0 0;
+v0xdb0a40_0 .net "a", 3 0, v0xdb1020_0; 1 drivers
+v0xdb0b00_0 .net "b", 3 0, v0xdb10a0_0; 1 drivers
+v0xdb0ba0_0 .net "cIn", 0 0, C4<0>; 1 drivers
+v0xdb0c50_0 .alias "cOut", 0 0, v0xdb1120_0;
+v0xdb0d30_0 .net "cOut1", 0 0, L_0xdb1370; 1 drivers
+v0xdb0db0_0 .net "cOut2", 0 0, L_0xdb2120; 1 drivers
+v0xdb0e80_0 .net "cOut3", 0 0, L_0xdb2c90; 1 drivers
+v0xdb0f50_0 .alias "s", 3 0, v0xdb12f0_0;
+L_0xdb1d60 .part v0xdb1020_0, 0, 1;
+L_0xdb1ea0 .part v0xdb10a0_0, 0, 1;
+L_0xdb1fe0 .part/pv L_0xdb1410, 0, 1, 4;
+L_0xdb2980 .part v0xdb1020_0, 1, 1;
+L_0xdb2a70 .part v0xdb10a0_0, 1, 1;
+L_0xdb2b60 .part/pv L_0xdb21c0, 1, 1, 4;
+L_0xdb34c0 .part v0xdb1020_0, 2, 1;
+L_0xdb3640 .part v0xdb10a0_0, 2, 1;
+L_0xdb3770 .part/pv L_0xdb2d30, 2, 1, 4;
+L_0xdb40a0 .part v0xdb1020_0, 3, 1;
+L_0xdb4190 .part v0xdb10a0_0, 3, 1;
+L_0xdb4230 .part/pv L_0xdb3940, 3, 1, 4;
+S_0xdb00d0 .scope module, "fa0" "FullAdder" 2 8, 2 16, S_0xd81320;
+ .timescale 0 0;
+v0xdb01c0_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0xdb0280_0 .net *"_s11", 1 0, L_0xdb1850; 1 drivers
+v0xdb0320_0 .net *"_s13", 1 0, L_0xdb1a60; 1 drivers
+v0xdb03c0_0 .net *"_s16", 0 0, C4<0>; 1 drivers
+v0xdb0470_0 .net *"_s17", 1 0, L_0xdb1c20; 1 drivers
+v0xdb0510_0 .net *"_s3", 1 0, L_0xdb1500; 1 drivers
+v0xdb05b0_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0xdb0650_0 .net *"_s7", 1 0, L_0xdb1690; 1 drivers
+v0xdb06f0_0 .net "a", 0 0, L_0xdb1d60; 1 drivers
+v0xdb0790_0 .net "b", 0 0, L_0xdb1ea0; 1 drivers
+v0xdb0830_0 .alias "cIn", 0 0, v0xdb0ba0_0;
+v0xdb08d0_0 .alias "cOut", 0 0, v0xdb0d30_0;
+v0xdb09c0_0 .net "s", 0 0, L_0xdb1410; 1 drivers
+L_0xdb1370 .part L_0xdb1c20, 1, 1;
+L_0xdb1410 .part L_0xdb1c20, 0, 1;
+L_0xdb1500 .concat [ 1 1 0 0], L_0xdb1d60, C4<0>;
+L_0xdb1690 .concat [ 1 1 0 0], L_0xdb1ea0, C4<0>;
+L_0xdb1850 .arith/sum 2, L_0xdb1500, L_0xdb1690;
+L_0xdb1a60 .concat [ 1 1 0 0], C4<0>, C4<0>;
+L_0xdb1c20 .arith/sum 2, L_0xdb1850, L_0xdb1a60;
+S_0xdaf760 .scope module, "fa1" "FullAdder" 2 9, 2 16, S_0xd81320;
+ .timescale 0 0;
+v0xdaf850_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0xdaf910_0 .net *"_s11", 1 0, L_0xdb2510; 1 drivers
+v0xdaf9b0_0 .net *"_s13", 1 0, L_0xdb2650; 1 drivers
+v0xdafa50_0 .net *"_s16", 0 0, C4<0>; 1 drivers
+v0xdafb00_0 .net *"_s17", 1 0, L_0xdb2840; 1 drivers
+v0xdafba0_0 .net *"_s3", 1 0, L_0xdb22b0; 1 drivers
+v0xdafc40_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0xdafce0_0 .net *"_s7", 1 0, L_0xdb23e0; 1 drivers
+v0xdafd80_0 .net "a", 0 0, L_0xdb2980; 1 drivers
+v0xdafe20_0 .net "b", 0 0, L_0xdb2a70; 1 drivers
+v0xdafec0_0 .alias "cIn", 0 0, v0xdb0d30_0;
+v0xdaff60_0 .alias "cOut", 0 0, v0xdb0db0_0;
+v0xdb0050_0 .net "s", 0 0, L_0xdb21c0; 1 drivers
+L_0xdb2120 .part L_0xdb2840, 1, 1;
+L_0xdb21c0 .part L_0xdb2840, 0, 1;
+L_0xdb22b0 .concat [ 1 1 0 0], L_0xdb2980, C4<0>;
+L_0xdb23e0 .concat [ 1 1 0 0], L_0xdb2a70, C4<0>;
+L_0xdb2510 .arith/sum 2, L_0xdb22b0, L_0xdb23e0;
+L_0xdb2650 .concat [ 1 1 0 0], L_0xdb1370, C4<0>;
+L_0xdb2840 .arith/sum 2, L_0xdb2510, L_0xdb2650;
+S_0xdaee20 .scope module, "fa2" "FullAdder" 2 10, 2 16, S_0xd81320;
+ .timescale 0 0;
+v0xdaef10_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0xdaefd0_0 .net *"_s11", 1 0, L_0xdb30d0; 1 drivers
+v0xdaf070_0 .net *"_s13", 1 0, L_0xdb3210; 1 drivers
+v0xdaf110_0 .net *"_s16", 0 0, C4<0>; 1 drivers
+v0xdaf190_0 .net *"_s17", 1 0, L_0xdb3380; 1 drivers
+v0xdaf230_0 .net *"_s3", 1 0, L_0xdb2e20; 1 drivers
+v0xdaf2d0_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0xdaf370_0 .net *"_s7", 1 0, L_0xdb2f50; 1 drivers
+v0xdaf410_0 .net "a", 0 0, L_0xdb34c0; 1 drivers
+v0xdaf4b0_0 .net "b", 0 0, L_0xdb3640; 1 drivers
+v0xdaf550_0 .alias "cIn", 0 0, v0xdb0db0_0;
+v0xdaf5f0_0 .alias "cOut", 0 0, v0xdb0e80_0;
+v0xdaf6e0_0 .net "s", 0 0, L_0xdb2d30; 1 drivers
+L_0xdb2c90 .part L_0xdb3380, 1, 1;
+L_0xdb2d30 .part L_0xdb3380, 0, 1;
+L_0xdb2e20 .concat [ 1 1 0 0], L_0xdb34c0, C4<0>;
+L_0xdb2f50 .concat [ 1 1 0 0], L_0xdb3640, C4<0>;
+L_0xdb30d0 .arith/sum 2, L_0xdb2e20, L_0xdb2f50;
+L_0xdb3210 .concat [ 1 1 0 0], L_0xdb2120, C4<0>;
+L_0xdb3380 .arith/sum 2, L_0xdb30d0, L_0xdb3210;
+S_0xd83870 .scope module, "fa3" "FullAdder" 2 11, 2 16, S_0xd81320;
+ .timescale 0 0;
+v0xd83960_0 .net *"_s10", 0 0, C4<0>; 1 drivers
+v0xdae530_0 .net *"_s11", 1 0, L_0xdb3c00; 1 drivers
+v0xdae5d0_0 .net *"_s13", 1 0, L_0xdb3d40; 1 drivers
+v0xdae670_0 .net *"_s16", 0 0, C4<0>; 1 drivers
+v0xdae720_0 .net *"_s17", 1 0, L_0xdb3ef0; 1 drivers
+v0xdae7c0_0 .net *"_s3", 1 0, L_0xdb3a30; 1 drivers
+v0xdae8a0_0 .net *"_s6", 0 0, C4<0>; 1 drivers
+v0xdae940_0 .net *"_s7", 1 0, L_0xdb3b20; 1 drivers
+v0xdaea30_0 .net "a", 0 0, L_0xdb40a0; 1 drivers
+v0xdaead0_0 .net "b", 0 0, L_0xdb4190; 1 drivers
+v0xdaebd0_0 .alias "cIn", 0 0, v0xdb0e80_0;
+v0xdaec70_0 .alias "cOut", 0 0, v0xdb1120_0;
+v0xdaed80_0 .net "s", 0 0, L_0xdb3940; 1 drivers
+L_0xdb38a0 .part L_0xdb3ef0, 1, 1;
+L_0xdb3940 .part L_0xdb3ef0, 0, 1;
+L_0xdb3a30 .concat [ 1 1 0 0], L_0xdb40a0, C4<0>;
+L_0xdb3b20 .concat [ 1 1 0 0], L_0xdb4190, C4<0>;
+L_0xdb3c00 .arith/sum 2, L_0xdb3a30, L_0xdb3b20;
+L_0xdb3d40 .concat [ 1 1 0 0], L_0xdb2c90, C4<0>;
+L_0xdb3ef0 .arith/sum 2, L_0xdb3c00, L_0xdb3d40;
+    .scope S_0xd81570;
+T_0 ;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xdb1020_0, 0, 0;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xdb10a0_0, 0, 0;
+    %vpi_call 2 35 "$dumpfile", "adder.vcd";
+    %vpi_call 2 36 "$dumpvars", 1'sb0, S_0xd81320;
+    %set/v v0xdb11f0_0, 0, 4;
+T_0.0 ;
+    %load/v 8, v0xdb11f0_0, 4;
+    %mov 12, 0, 2;
+   %cmpi/u 8, 15, 6;
+    %jmp/0xz T_0.1, 5;
+    %delay 5, 0;
+    %vpi_call 2 40 "$display", " a(0000)   b(0000)   s(0000)  cOut\012";
+    %set/v v0xdb1270_0, 0, 4;
+T_0.2 ;
+    %load/v 8, v0xdb1270_0, 4;
+    %mov 12, 0, 2;
+   %cmpi/u 8, 15, 6;
+    %jmp/0xz T_0.3, 5;
+    %load/v 8, v0xdb11f0_0, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xdb1020_0, 0, 8;
+    %load/v 8, v0xdb1270_0, 4;
+    %ix/load 0, 4, 0;
+    %assign/v0 v0xdb10a0_0, 0, 8;
+    %delay 5, 0;
+    %vpi_call 2 46 "$display", "%2d(%b)  %2d(%b)  %2d(%b)   %b", v0xdb11f0_0, v0xdb11f0_0, v0xdb1270_0, v0xdb1270_0, v0xdb12f0_0, v0xdb12f0_0, v0xdb1120_0;
+    %load/v 8, v0xdb1270_0, 4;
+    %mov 12, 0, 28;
+    %addi 8, 1, 32;
+    %set/v v0xdb1270_0, 8, 4;
+    %jmp T_0.2;
+T_0.3 ;
+    %delay 5, 0;
+    %vpi_call 2 48 "$display", "\012";
+    %load/v 8, v0xdb11f0_0, 4;
+    %mov 12, 0, 28;
+    %addi 8, 1, 32;
+    %set/v v0xdb11f0_0, 8, 4;
+    %jmp T_0.0;
+T_0.1 ;
+    %delay 10, 0;
+    %vpi_call 2 50 "$finish";
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "FullAdder.v";
